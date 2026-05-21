@@ -4,6 +4,8 @@ import 'dotenv/config';
 
 import { clerkMiddleware } from '@clerk/express';
 import { connectDB } from './config/db.js';
+import doctorRouter from './routes/doctorRouter.js';
+import serviceRouter from './routes/serviceRouter.js';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -18,6 +20,8 @@ app.use(express.urlencoded({ limit: "20mb", extended: true }));
 connectDB();
 
 // Routes
+app.use("/api/doctors", doctorRouter)
+app.use("/api/services", serviceRouter)
 
 app.get("/", (req, res) => {
     res.send("API is working");
