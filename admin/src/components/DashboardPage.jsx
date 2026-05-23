@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 
 
 const API_BASE = 'http://localhost:4000';
-const PATIENT_COUNT_API = `${API_BASE}/api/appointment/patients/count`
+const PATIENT_COUNT_API = `${API_BASE}/api/appointments/patients/count`
 
 // Helper Functions
 const safeNumber = (v, fallback = 0) => {
