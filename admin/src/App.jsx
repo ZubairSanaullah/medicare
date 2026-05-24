@@ -7,6 +7,7 @@ import List from './pages/List'
 import Appointments from './pages/Appointments'
 import SetDashboard from './pages/SetDashboard'
 import AddServ from './pages/AddServ'
+import ListService from './pages/ListService'
 
 function RequireAuth({ children }) {
   const { isLoaded, isSignedIn } = useUser();
@@ -41,6 +42,7 @@ const App = () => {
       <Route path='/appointments' element={<RequireAuth><Appointments /></RequireAuth>} />
       <Route path='/service-dashboard' element={<RequireAuth><SetDashboard /></RequireAuth>} />
       <Route path='/add-service' element={<RequireAuth><AddServ /></RequireAuth>} />
+      <Route path='/list-service' element={<RequireAuth><ListService /></RequireAuth>} />
 
     </Routes>
   )
