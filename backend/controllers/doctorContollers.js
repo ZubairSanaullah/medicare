@@ -128,7 +128,7 @@ export async function createDoctor(req, res) {
 
         return res.status(201).json({
             success: true,
-            date: out,
+            data: out,
             token
         })
     }
