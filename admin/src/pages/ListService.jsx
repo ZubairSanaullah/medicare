@@ -1,7 +1,7 @@
 import ListServicePage from "../components/ListServicePage"
 import Navbar from "../components/Navbar"
 
-export const ListService = () => {
+const ListService = () => {
     return (
         <div>
             <Navbar />
@@ -10,3 +10,5 @@ export const ListService = () => {
 
     )
 }
+
+export default ListService
