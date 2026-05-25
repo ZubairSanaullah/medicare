@@ -842,7 +842,7 @@ export const serviceAppointmentsStyles = {
   rescheduleCancelButton: "flex-1 sm:flex-none px-3 py-1 bg-red-200 border text-sm cursor-pointer border-red-500 rounded-full",
   
   // Toast component styles
-  toastContainer: "fixed top-4 right-3 sm:right-4 z-50 flex flex-col gap-3",
+  toastContainer: "fixed top-4 right-3 sm:right-4 z-50 flex flex-col items-end gap-3",
   toast: "max-w-xs w-full rounded-lg shadow-lg px-4 py-3 border-l-4 border-emerald-400 bg-white/95 backdrop-blur-sm",
   toastContent: "flex items-start gap-3",
   toastSpinner: "h-5 w-5 animate-spin text-emerald-600",
