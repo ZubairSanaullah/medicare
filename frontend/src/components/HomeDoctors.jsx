@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { homeDoctorsStyles, iconSize } from "../assets/dummyStyles"
 import { Link } from "react-router-dom";
-import { ChevronRight, MedalIcon } from "lucide-react";
-import { MousePointer2Off } from "lucide";
+import { ChevronRight, MedalIcon, MousePointer2Off } from "lucide-react";
 
 const HomeDoctors = () => {
     const API_BASE = 'http://localhost:4000';
