@@ -85,129 +85,126 @@ const Footer = () => {
                         </div>
 
                         <p className={footerStyles.companyDescription}>
-                                Your trusted partner for reliable and convenient healthcare services.
-                                We are committed to providing the best medical care with compassion and professionalism.
+                            Your trusted partner for reliable and convenient healthcare services.
+                            We are committed to providing the best medical care with compassion and professionalism.
 
-                            </p>
+                        </p>
 
-                            <div className={footerStyles.contactContainer}>
-                                <div className={footerStyles.contactItem}>
-                                    <div className={footerStyles.contactIconWrapper}>
-                                        <Phone className={footerStyles.contactIcon} />
-                                    </div>
-                                    <span className={footerStyles.contactText}>+92 312 4903447</span>
+                        <div className={footerStyles.contactContainer}>
+                            <div className={footerStyles.contactItem}>
+                                <div className={footerStyles.contactIconWrapper}>
+                                    <Phone className={footerStyles.contactIcon} />
                                 </div>
-
-                                <div className={footerStyles.contactItem}>
-                                    <div className={footerStyles.contactIconWrapper}>
-                                        <Mail className={footerStyles.contactIcon} />
-                                    </div>
-                                    <span className={footerStyles.contactText}>zubairsanaullah1122@gmail.com</span>
-                                </div>
-
-                                <div className={footerStyles.contactItem}>
-                                    <div className={footerStyles.contactIconWrapper}>
-                                        <MapPinCheck className={footerStyles.contactIcon} />
-                                    </div>
-                                    <span className={footerStyles.contactText}>Lahore, Punjab, Pakistan</span>
-                                </div>
+                                <span className={footerStyles.contactText}>+92 312 4903447</span>
                             </div>
-                        </div>
 
-                        {/* Quick Links Section */}
-                        <div className={footerStyles.linksSection}>
-                            <h3 className={footerStyles.sectionTitle}>Quick Links</h3>
-                            <ul className={footerStyles.linksList}>
-                                {quickLinks.map((link, index) => (
-                                    <li key={index} className={footerStyles.linkItem}>
-                                        <a href={link.href} className={footerStyles.quickLink}>
-                                            <div className={footerStyles.quickLinkIconWrapper}>
-                                                <ChevronRight className={footerStyles.quickLinkIcon} />
-                                            </div>
-                                            {link.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Services Section */}
-                        <div className={footerStyles.linksSection}>
-                            <h3 className={footerStyles.sectionTitle}>Services</h3>
-                            <ul className={footerStyles.linksList}>
-                                {services.map((service, index) => (
-                                    <li key={index} className={footerStyles.linkItem}>
-                                        <a href={service.href} className={footerStyles.serviceLink}>
-                                            <div className={footerStyles.serviceIcon}></div>
-                                            {service.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Newsletter & Social Section */}
-                        <div className={footerStyles.newsletterSection}>
-                            <h3 className={footerStyles.newsletterTitle}>Newsletter</h3>
-                            <p className={footerStyles.newsletterDescription}>
-                                Subscribe to our newsletter to get updates on our latest services.
-                            </p>
-                            
-                            <form className={footerStyles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
-                                <div className={footerStyles.mobileNewsletterContainer}>
-                                    <input 
-                                        type="email" 
-                                        placeholder="Enter your email" 
-                                        className={footerStyles.emailInput}
-                                    />
-                                    <button type="submit" className={footerStyles.mobileSubscribeButton}>
-                                        <Send className={footerStyles.mobileButtonIcon} /> Subscribe
-                                    </button>
+                            <div className={footerStyles.contactItem}>
+                                <div className={footerStyles.contactIconWrapper}>
+                                    <Mail className={footerStyles.contactIcon} />
                                 </div>
-                                
-                                <div className={footerStyles.desktopNewsletterContainer}>
-                                    <input 
-                                        type="email" 
-                                        placeholder="Enter your email" 
-                                        className={footerStyles.desktopEmailInput}
-                                    />
-                                    <button type="submit" className={footerStyles.desktopSubscribeButton}>
-                                        <Send className={footerStyles.desktopButtonIcon} />
-                                        <span className={footerStyles.desktopButtonText}>Subscribe</span>
-                                    </button>
-                                </div>
-                            </form>
+                                <span className={footerStyles.contactText}>zubairsanaullah1122@gmail.com</span>
+                            </div>
 
-                            <div className={footerStyles.socialContainer}>
-                                {socialLinks.map((social, index) => {
-                                    const Icon = social.Icon;
-                                    return (
-                                        <a 
-                                            key={index} 
-                                            href={social.href} 
-                                            className={`${footerStyles.socialLink} ${social.color}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <div className={footerStyles.socialIconBackground}></div>
-                                            <Icon className={footerStyles.socialIcon} />
-                                        </a>
-                                    );
-                                })}
+                            <div className={footerStyles.contactItem}>
+                                <div className={footerStyles.contactIconWrapper}>
+                                    <MapPinCheck className={footerStyles.contactIcon} />
+                                </div>
+                                <span className={footerStyles.contactText}>Lahore, Punjab, Pakistan</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className={footerStyles.bottomSection}>
-                        <div className={footerStyles.copyright}>
-                            &copy; {currentYear} MediCare. All rights reserved.
-                        </div>
-                        <div className={footerStyles.designerText}>
-                            Designed by <a href="#" className={footerStyles.designerLink}>Hexagon Digital Services</a>
+                    {/* Quick Links Section */}
+                    <div className={footerStyles.linksSection}>
+                        <h3 className={footerStyles.sectionTitle}>Quick Links</h3>
+                        <ul className={footerStyles.linksList}>
+                            {quickLinks.map((link, index) => (
+                                <li key={index} className={footerStyles.linkItem}>
+                                    <a href={link.href} className={footerStyles.quickLink}>
+                                        <div className={footerStyles.quickLinkIconWrapper}>
+                                            <ChevronRight className={footerStyles.quickLinkIcon} />
+                                        </div>
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Services Section */}
+                    <div className={footerStyles.linksSection}>
+                        <h3 className={footerStyles.sectionTitle}>Services</h3>
+                        <ul className={footerStyles.linksList}>
+                            {services.map((service, index) => (
+                                <li key={index} className={footerStyles.linkItem}>
+                                    <a href={service.href} className={footerStyles.serviceLink}>
+                                        <div className={footerStyles.serviceIcon}></div>
+                                        {service.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Newsletter & Social Section */}
+                    <div className={footerStyles.newsletterSection}>
+                        <h3 className={footerStyles.newsletterTitle}>Newsletter</h3>
+                        <p className={footerStyles.newsletterDescription}>
+                            Subscribe to our newsletter to get updates on our latest services.
+                        </p>
+
+                        <form className={footerStyles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
+                            <div className={footerStyles.mobileNewsletterContainer}>
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className={footerStyles.emailInput}
+                                />
+                                <button type="submit" className={footerStyles.mobileSubscribeButton}>
+                                    <Send className={footerStyles.mobileButtonIcon} /> Subscribe
+                                </button>
+                            </div>
+
+                            <div className={footerStyles.desktopNewsletterContainer}>
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className={footerStyles.desktopEmailInput}
+                                />
+                                <button type="submit" className={footerStyles.desktopSubscribeButton}>
+                                    <Send className={footerStyles.desktopButtonIcon} />
+                                    <span className={footerStyles.desktopButtonText}>Subscribe</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div className={footerStyles.socialContainer}>
+                            {socialLinks.map((social, index) => {
+                                const Icon = social.Icon;
+                                return (
+                                    <a
+                                        key={index}
+                                        href={social.href}
+                                        className={`${footerStyles.socialLink} ${social.color}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <div className={footerStyles.socialIconBackground}></div>
+                                        <Icon className={footerStyles.socialIcon} />
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
-            </footer>
+
+                <div className={footerStyles.bottomSection}>
+                    <div className={footerStyles.copyright}>
+                        &copy; {currentYear} MediCare. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
     )
 }
 

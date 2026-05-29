@@ -7,6 +7,7 @@ import ServiceDetailPage from './pages/ServiceDetailPage'
 import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Dhome from './pages/Dhome'
+import List from './doctor/List'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/doctor-admin/login' element={<Login />} />
         <Route path='/doctor-admin/:id' element={<Dhome />} />
+        <Route path='/doctor-admin/:id/appointments' element={<List />} />
       </Routes>
     </div>
   )
