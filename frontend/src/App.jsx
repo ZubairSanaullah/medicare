@@ -10,8 +10,10 @@ import Dhome from './pages/Dhome'
 import List from './doctor/List'
 import EditProfile from './doctor/EditProfile'
 import Appointments from './pages/Appointments'
+import VerifyPaymentPage from '../VerifyPaymentPage'
 import { useEffect, useState } from 'react'
 import { CircleChevronUp } from 'lucide-react'
+import VerifyServicePaymentPage from '../VerifyServicePaymentPage'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -82,6 +84,13 @@ const App = () => {
           <Route path='/doctor-admin/:id' element={<Dhome />} />
           <Route path='/doctor-admin/:id/appointments' element={<List />} />
           <Route path='/doctor-admin/:id/profile/edit' element={<EditProfile />} />
+
+          {/* Payments Page */}
+          <Route path='/appointment/success' element={<VerifyPaymentPage />} />
+          <Route path='/appointment/cancel' element={<VerifyPaymentPages />} />
+
+          <Route path='/service-appointment/success' element={<VerifyServicePaymentPage />} />
+          <Route path='/service-appointment/cancel' element={<VerifyServicePaymentPage />} />
         </Routes>
       </div>
       <ScrollButton />
