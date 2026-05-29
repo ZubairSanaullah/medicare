@@ -87,7 +87,7 @@ const App = () => {
 
           {/* Payments Page */}
           <Route path='/appointment/success' element={<VerifyPaymentPage />} />
-          <Route path='/appointment/cancel' element={<VerifyPaymentPages />} />
+          <Route path='/appointment/cancel' element={<VerifyPaymentPage />} />
 
           <Route path='/service-appointment/success' element={<VerifyServicePaymentPage />} />
           <Route path='/service-appointment/cancel' element={<VerifyServicePaymentPage />} />
