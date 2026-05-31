@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { replace, useLocation, useNavigate } from "react-router-dom"
-
-const API_BASE = 'http://localhost:4000/'
-
+import { API_BASE } from "./src/config.js";
 
 const VerifyPaymentPage = () => {
     const location = useLocation();

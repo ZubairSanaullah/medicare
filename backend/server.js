@@ -17,8 +17,8 @@ const app = express();
 const allowOrigins = [
     'http://localhost:5173',
     'http://localhost:5174',
-    'https://nexacare-lyart.vercel.app/',
-    'https://nexacare-admin.vercel.app/'
+    'https://nexacare-lyart.vercel.app',
+    'https://nexacare-admin.vercel.app'
 ];
 
 // Middlewares

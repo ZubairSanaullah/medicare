@@ -10,10 +10,10 @@ import axios from 'axios'
 import { useAuth, useUser } from '@clerk/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { API_BASE } from '../config.js';
 
-const API_BASE = 'http://localhost:4000/'
 const API = axios.create({
-    baseURL: API_BASE
+    baseURL: API_BASE || undefined,
 })
 
 // Helpers

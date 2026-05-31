@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import { doctorsPageStyles } from "../assets/dummyStyles"
 import { ChevronRight, CircleArrowDown, CircleChevronUp, Medal, MousePointer2Off, Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { API_BASE } from "../config.js";
 
 const DoctorPage = () => {
-    const API_BASE = "http://localhost:4000";
     const [allDoctors, setAllDoctors] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");

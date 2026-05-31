@@ -2,6 +2,7 @@ import { ChevronsRight, MousePointer2Off } from "lucide-react";
 import { servicePageStyles, serviceCardStyles } from "../assets/dummyStyles"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { API_BASE } from "../config.js";
 
 const PlaceholderImg = "/placeholder-service.jpg";
 
@@ -105,7 +106,6 @@ const ServiceCard = ({ service }) => {
 };
 
 const ServicePage = ({ previewCount = 9999 }) => {
-    const API_BASE = "http://localhost:4000";
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
