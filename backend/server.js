@@ -1,55 +1,64 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
+import serverless from 'serverless-http';
 
 import { clerkMiddleware } from '@clerk/express';
 import { connectDB } from './config/db.js';
+
 import doctorRouter from './routes/doctorRouter.js';
 import serviceRouter from './routes/serviceRouter.js';
 import appointmentRouter from './routes/appointmentRouter.js';
 import serviceAppointmentRouter from './routes/serviceAppointmentRouter.js';
 
 const app = express();
-const port = process.env.PORT || 4000;
 
+// Allowed Origins
 const allowOrigins = [
     'http://localhost:5173',
-    'http://localhost:5174'
-]
+    'http://localhost:5174',
+    'https://your-frontend.vercel.app',
+    'https://your-admin.vercel.app'
+];
 
 // Middlewares
-app.use(cors(
-    {
-        origin: function (origin, callback) {
-            if (!origin) return callback(null, true);
-            if (allowOrigins.includes(origin)) {
-                return callback(null, true)
-            }
+app.use(cors({
+    origin: function (origin, callback) {
 
-            return callback(new Error("Not allowed by CORS"))
-        },
-        credentials: true,
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-    }
-));
+        if (!origin) return callback(null, true);
+
+        if (allowOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 app.use(clerkMiddleware());
-app.use(express.json({ limit: "20mb" }));
-app.use(express.urlencoded({ limit: "20mb", extended: true }));
 
-// DB
+app.use(express.json({ limit: "20mb" }));
+app.use(express.urlencoded({
+    limit: "20mb",
+    extended: true
+}));
+
+// Connect DB
 connectDB();
 
 // Routes
-app.use("/api/doctors", doctorRouter)
-app.use("/api/services", serviceRouter)
-app.use("/api/appointments", appointmentRouter)
-app.use('/api/service-appointments', serviceAppointmentRouter);
+app.use("/api/doctors", doctorRouter);
+app.use("/api/services", serviceRouter);
+app.use("/api/appointments", appointmentRouter);
+app.use("/api/service-appointments", serviceAppointmentRouter);
 
 app.get("/", (req, res) => {
     res.send("API is working");
 });
 
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-});
+// Export for Vercel
+export default app;
+export const handler = serverless(app);
